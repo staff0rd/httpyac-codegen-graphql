@@ -1,0 +1,10 @@
+overwrite: true
+schema: "https://api.spacexdata.com/v4"
+documents: null
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

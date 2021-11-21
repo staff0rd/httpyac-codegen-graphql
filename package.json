@@ -1,0 +1,18 @@
+{
+  "name": "httpyac-codegen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "codegen": "graphql-codegen --config codegen.yml"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.3.0",
+    "graphql": "^15.7.2",
+    "@graphql-codegen/typescript": "2.4.1",
+    "@graphql-codegen/introspection": "2.1.0"
+  }
+}
