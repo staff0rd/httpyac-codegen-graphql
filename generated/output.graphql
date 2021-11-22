@@ -1,0 +1,4084 @@
+query capsule_query($id: ID!) {
+  capsule(id: $id) {
+    dragon {
+      active
+      crew_capacity
+      description
+      diameter {
+        feet
+        meters
+      }
+      dry_mass_kg
+      dry_mass_lb
+      first_flight
+      heat_shield {
+        dev_partner
+        material
+        size_meters
+        temp_degrees
+      }
+      height_w_trunk {
+        feet
+        meters
+      }
+      id
+      launch_payload_mass {
+        kg
+        lb
+      }
+      launch_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      name
+      orbit_duration_yr
+      pressurized_capsule {
+        payload_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      return_payload_mass {
+        kg
+        lb
+      }
+      return_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      sidewall_angle_deg
+      thrusters {
+        amount
+        fuel_1
+        fuel_2
+        pods
+        thrust {
+          kN
+          lbf
+        }
+        type
+      }
+      trunk {
+        cargo {
+          solar_array
+          unpressurized_cargo
+        }
+        trunk_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      type
+      wikipedia
+    }
+    id
+    landings
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    status
+    type
+  }
+}
+
+query capsules_query($find: CapsulesFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  capsules(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    dragon {
+      active
+      crew_capacity
+      description
+      diameter {
+        feet
+        meters
+      }
+      dry_mass_kg
+      dry_mass_lb
+      first_flight
+      heat_shield {
+        dev_partner
+        material
+        size_meters
+        temp_degrees
+      }
+      height_w_trunk {
+        feet
+        meters
+      }
+      id
+      launch_payload_mass {
+        kg
+        lb
+      }
+      launch_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      name
+      orbit_duration_yr
+      pressurized_capsule {
+        payload_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      return_payload_mass {
+        kg
+        lb
+      }
+      return_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      sidewall_angle_deg
+      thrusters {
+        amount
+        fuel_1
+        fuel_2
+        pods
+        thrust {
+          kN
+          lbf
+        }
+        type
+      }
+      trunk {
+        cargo {
+          solar_array
+          unpressurized_cargo
+        }
+        trunk_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      type
+      wikipedia
+    }
+    id
+    landings
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    status
+    type
+  }
+}
+
+query capsulesPast_query($find: CapsulesFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  capsulesPast(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    dragon {
+      active
+      crew_capacity
+      description
+      diameter {
+        feet
+        meters
+      }
+      dry_mass_kg
+      dry_mass_lb
+      first_flight
+      heat_shield {
+        dev_partner
+        material
+        size_meters
+        temp_degrees
+      }
+      height_w_trunk {
+        feet
+        meters
+      }
+      id
+      launch_payload_mass {
+        kg
+        lb
+      }
+      launch_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      name
+      orbit_duration_yr
+      pressurized_capsule {
+        payload_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      return_payload_mass {
+        kg
+        lb
+      }
+      return_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      sidewall_angle_deg
+      thrusters {
+        amount
+        fuel_1
+        fuel_2
+        pods
+        thrust {
+          kN
+          lbf
+        }
+        type
+      }
+      trunk {
+        cargo {
+          solar_array
+          unpressurized_cargo
+        }
+        trunk_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      type
+      wikipedia
+    }
+    id
+    landings
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    status
+    type
+  }
+}
+
+query capsulesUpcoming_query($find: CapsulesFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  capsulesUpcoming(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    dragon {
+      active
+      crew_capacity
+      description
+      diameter {
+        feet
+        meters
+      }
+      dry_mass_kg
+      dry_mass_lb
+      first_flight
+      heat_shield {
+        dev_partner
+        material
+        size_meters
+        temp_degrees
+      }
+      height_w_trunk {
+        feet
+        meters
+      }
+      id
+      launch_payload_mass {
+        kg
+        lb
+      }
+      launch_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      name
+      orbit_duration_yr
+      pressurized_capsule {
+        payload_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      return_payload_mass {
+        kg
+        lb
+      }
+      return_payload_vol {
+        cubic_feet
+        cubic_meters
+      }
+      sidewall_angle_deg
+      thrusters {
+        amount
+        fuel_1
+        fuel_2
+        pods
+        thrust {
+          kN
+          lbf
+        }
+        type
+      }
+      trunk {
+        cargo {
+          solar_array
+          unpressurized_cargo
+        }
+        trunk_volume {
+          cubic_feet
+          cubic_meters
+        }
+      }
+      type
+      wikipedia
+    }
+    id
+    landings
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    status
+    type
+  }
+}
+
+query company_query {
+  company {
+    ceo
+    coo
+    cto
+    cto_propulsion
+    employees
+    founded
+    founder
+    headquarters {
+      address
+      city
+      state
+    }
+    launch_sites
+    links {
+      elon_twitter
+      flickr
+      twitter
+      website
+    }
+    name
+    summary
+    test_sites
+    valuation
+    vehicles
+  }
+}
+
+query core_query($id: ID!) {
+  core(id: $id) {
+    asds_attempts
+    asds_landings
+    block
+    id
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    rtls_attempts
+    rtls_landings
+    status
+    water_landing
+  }
+}
+
+query cores_query($find: CoresFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  cores(find: $find, limit: $limit, offset: $offset, order: $order, sort: $sort) {
+    asds_attempts
+    asds_landings
+    block
+    id
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    rtls_attempts
+    rtls_landings
+    status
+    water_landing
+  }
+}
+
+query coresPast_query($find: CoresFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  coresPast(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    asds_attempts
+    asds_landings
+    block
+    id
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    rtls_attempts
+    rtls_landings
+    status
+    water_landing
+  }
+}
+
+query coresUpcoming_query($find: CoresFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  coresUpcoming(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    asds_attempts
+    asds_landings
+    block
+    id
+    missions {
+      flight
+      name
+    }
+    original_launch
+    reuse_count
+    rtls_attempts
+    rtls_landings
+    status
+    water_landing
+  }
+}
+
+query dragon_query($id: ID!) {
+  dragon(id: $id) {
+    active
+    crew_capacity
+    description
+    diameter {
+      feet
+      meters
+    }
+    dry_mass_kg
+    dry_mass_lb
+    first_flight
+    heat_shield {
+      dev_partner
+      material
+      size_meters
+      temp_degrees
+    }
+    height_w_trunk {
+      feet
+      meters
+    }
+    id
+    launch_payload_mass {
+      kg
+      lb
+    }
+    launch_payload_vol {
+      cubic_feet
+      cubic_meters
+    }
+    name
+    orbit_duration_yr
+    pressurized_capsule {
+      payload_volume {
+        cubic_feet
+        cubic_meters
+      }
+    }
+    return_payload_mass {
+      kg
+      lb
+    }
+    return_payload_vol {
+      cubic_feet
+      cubic_meters
+    }
+    sidewall_angle_deg
+    thrusters {
+      amount
+      fuel_1
+      fuel_2
+      pods
+      thrust {
+        kN
+        lbf
+      }
+      type
+    }
+    trunk {
+      cargo {
+        solar_array
+        unpressurized_cargo
+      }
+      trunk_volume {
+        cubic_feet
+        cubic_meters
+      }
+    }
+    type
+    wikipedia
+  }
+}
+
+query dragons_query($limit: Int, $offset: Int) {
+  dragons(limit: $limit, offset: $offset) {
+    active
+    crew_capacity
+    description
+    diameter {
+      feet
+      meters
+    }
+    dry_mass_kg
+    dry_mass_lb
+    first_flight
+    heat_shield {
+      dev_partner
+      material
+      size_meters
+      temp_degrees
+    }
+    height_w_trunk {
+      feet
+      meters
+    }
+    id
+    launch_payload_mass {
+      kg
+      lb
+    }
+    launch_payload_vol {
+      cubic_feet
+      cubic_meters
+    }
+    name
+    orbit_duration_yr
+    pressurized_capsule {
+      payload_volume {
+        cubic_feet
+        cubic_meters
+      }
+    }
+    return_payload_mass {
+      kg
+      lb
+    }
+    return_payload_vol {
+      cubic_feet
+      cubic_meters
+    }
+    sidewall_angle_deg
+    thrusters {
+      amount
+      fuel_1
+      fuel_2
+      pods
+      thrust {
+        kN
+        lbf
+      }
+      type
+    }
+    trunk {
+      cargo {
+        solar_array
+        unpressurized_cargo
+      }
+      trunk_volume {
+        cubic_feet
+        cubic_meters
+      }
+    }
+    type
+    wikipedia
+  }
+}
+
+query histories_query($find: HistoryFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  histories(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    details
+    event_date_unix
+    event_date_utc
+    flight {
+      details
+      id
+      is_tentative
+      launch_date_local
+      launch_date_unix
+      launch_date_utc
+      launch_site {
+        site_id
+        site_name
+        site_name_long
+      }
+      launch_success
+      launch_year
+      links {
+        article_link
+        flickr_images
+        mission_patch
+        mission_patch_small
+        presskit
+        reddit_campaign
+        reddit_launch
+        reddit_media
+        reddit_recovery
+        video_link
+        wikipedia
+      }
+      mission_id
+      mission_name
+      rocket {
+        fairings {
+          recovered
+          recovery_attempt
+          reused
+          ship
+        }
+        first_stage {
+          cores {
+            block
+            core {
+              asds_attempts
+              asds_landings
+              block
+              id
+              missions {
+                flight
+                name
+              }
+              original_launch
+              reuse_count
+              rtls_attempts
+              rtls_landings
+              status
+              water_landing
+            }
+            flight
+            gridfins
+            land_success
+            landing_intent
+            landing_type
+            landing_vehicle
+            legs
+            reused
+          }
+        }
+        rocket {
+          active
+          boosters
+          company
+          cost_per_launch
+          country
+          description
+          diameter {
+            feet
+            meters
+          }
+          engines {
+            engine_loss_max
+            layout
+            number
+            propellant_1
+            propellant_2
+            thrust_sea_level {
+              kN
+              lbf
+            }
+            thrust_to_weight
+            thrust_vacuum {
+              kN
+              lbf
+            }
+            type
+            version
+          }
+          first_flight
+          first_stage {
+            burn_time_sec
+            engines
+            fuel_amount_tons
+            reusable
+            thrust_sea_level {
+              kN
+              lbf
+            }
+            thrust_vacuum {
+              kN
+              lbf
+            }
+          }
+          height {
+            feet
+            meters
+          }
+          id
+          landing_legs {
+            material
+            number
+          }
+          mass {
+            kg
+            lb
+          }
+          name
+          payload_weights {
+            id
+            kg
+            lb
+            name
+          }
+          second_stage {
+            burn_time_sec
+            engines
+            fuel_amount_tons
+            payloads {
+              composite_fairing {
+                diameter {
+                  feet
+                  meters
+                }
+                height {
+                  feet
+                  meters
+                }
+              }
+              option_1
+            }
+            thrust {
+              kN
+              lbf
+            }
+          }
+          stages
+          success_rate_pct
+          type
+          wikipedia
+        }
+        rocket_name
+        rocket_type
+        second_stage {
+          block
+          payloads {
+            customers
+            id
+            manufacturer
+            nationality
+            norad_id
+            orbit
+            orbit_params {
+              apoapsis_km
+              arg_of_pericenter
+              eccentricity
+              epoch
+              inclination_deg
+              lifespan_years
+              longitude
+              mean_anomaly
+              mean_motion
+              periapsis_km
+              period_min
+              raan
+              reference_system
+              regime
+              semi_major_axis_km
+            }
+            payload_mass_kg
+            payload_mass_lbs
+            payload_type
+            reused
+          }
+        }
+      }
+      ships {
+        abs
+        active
+        attempted_landings
+        class
+        course_deg
+        home_port
+        id
+        image
+        imo
+        missions {
+          flight
+          name
+        }
+        mmsi
+        model
+        name
+        position {
+          latitude
+          longitude
+        }
+        roles
+        speed_kn
+        status
+        successful_landings
+        type
+        url
+        weight_kg
+        weight_lbs
+        year_built
+      }
+      static_fire_date_unix
+      static_fire_date_utc
+      telemetry {
+        flight_club
+      }
+      tentative_max_precision
+      upcoming
+    }
+    id
+    links {
+      article
+      reddit
+      wikipedia
+    }
+    title
+  }
+}
+
+query historiesResult_query($find: HistoryFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  historiesResult(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    data {
+      details
+      event_date_unix
+      event_date_utc
+      flight {
+        details
+        id
+        is_tentative
+        launch_date_local
+        launch_date_unix
+        launch_date_utc
+        launch_site {
+          site_id
+          site_name
+          site_name_long
+        }
+        launch_success
+        launch_year
+        links {
+          article_link
+          flickr_images
+          mission_patch
+          mission_patch_small
+          presskit
+          reddit_campaign
+          reddit_launch
+          reddit_media
+          reddit_recovery
+          video_link
+          wikipedia
+        }
+        mission_id
+        mission_name
+        rocket {
+          fairings {
+            recovered
+            recovery_attempt
+            reused
+            ship
+          }
+          first_stage {
+            cores {
+              block
+              core {
+                asds_attempts
+                asds_landings
+                block
+                id
+                missions {
+                  flight
+                  name
+                }
+                original_launch
+                reuse_count
+                rtls_attempts
+                rtls_landings
+                status
+                water_landing
+              }
+              flight
+              gridfins
+              land_success
+              landing_intent
+              landing_type
+              landing_vehicle
+              legs
+              reused
+            }
+          }
+          rocket {
+            active
+            boosters
+            company
+            cost_per_launch
+            country
+            description
+            diameter {
+              feet
+              meters
+            }
+            engines {
+              engine_loss_max
+              layout
+              number
+              propellant_1
+              propellant_2
+              thrust_sea_level {
+                kN
+                lbf
+              }
+              thrust_to_weight
+              thrust_vacuum {
+                kN
+                lbf
+              }
+              type
+              version
+            }
+            first_flight
+            first_stage {
+              burn_time_sec
+              engines
+              fuel_amount_tons
+              reusable
+              thrust_sea_level {
+                kN
+                lbf
+              }
+              thrust_vacuum {
+                kN
+                lbf
+              }
+            }
+            height {
+              feet
+              meters
+            }
+            id
+            landing_legs {
+              material
+              number
+            }
+            mass {
+              kg
+              lb
+            }
+            name
+            payload_weights {
+              id
+              kg
+              lb
+              name
+            }
+            second_stage {
+              burn_time_sec
+              engines
+              fuel_amount_tons
+              payloads {
+                composite_fairing {
+                  diameter {
+                    feet
+                    meters
+                  }
+                  height {
+                    feet
+                    meters
+                  }
+                }
+                option_1
+              }
+              thrust {
+                kN
+                lbf
+              }
+            }
+            stages
+            success_rate_pct
+            type
+            wikipedia
+          }
+          rocket_name
+          rocket_type
+          second_stage {
+            block
+            payloads {
+              customers
+              id
+              manufacturer
+              nationality
+              norad_id
+              orbit
+              orbit_params {
+                apoapsis_km
+                arg_of_pericenter
+                eccentricity
+                epoch
+                inclination_deg
+                lifespan_years
+                longitude
+                mean_anomaly
+                mean_motion
+                periapsis_km
+                period_min
+                raan
+                reference_system
+                regime
+                semi_major_axis_km
+              }
+              payload_mass_kg
+              payload_mass_lbs
+              payload_type
+              reused
+            }
+          }
+        }
+        ships {
+          abs
+          active
+          attempted_landings
+          class
+          course_deg
+          home_port
+          id
+          image
+          imo
+          missions {
+            flight
+            name
+          }
+          mmsi
+          model
+          name
+          position {
+            latitude
+            longitude
+          }
+          roles
+          speed_kn
+          status
+          successful_landings
+          type
+          url
+          weight_kg
+          weight_lbs
+          year_built
+        }
+        static_fire_date_unix
+        static_fire_date_utc
+        telemetry {
+          flight_club
+        }
+        tentative_max_precision
+        upcoming
+      }
+      id
+      links {
+        article
+        reddit
+        wikipedia
+      }
+      title
+    }
+    result {
+      totalCount
+    }
+  }
+}
+
+query history_query($id: ID!) {
+  history(id: $id) {
+    details
+    event_date_unix
+    event_date_utc
+    flight {
+      details
+      id
+      is_tentative
+      launch_date_local
+      launch_date_unix
+      launch_date_utc
+      launch_site {
+        site_id
+        site_name
+        site_name_long
+      }
+      launch_success
+      launch_year
+      links {
+        article_link
+        flickr_images
+        mission_patch
+        mission_patch_small
+        presskit
+        reddit_campaign
+        reddit_launch
+        reddit_media
+        reddit_recovery
+        video_link
+        wikipedia
+      }
+      mission_id
+      mission_name
+      rocket {
+        fairings {
+          recovered
+          recovery_attempt
+          reused
+          ship
+        }
+        first_stage {
+          cores {
+            block
+            core {
+              asds_attempts
+              asds_landings
+              block
+              id
+              missions {
+                flight
+                name
+              }
+              original_launch
+              reuse_count
+              rtls_attempts
+              rtls_landings
+              status
+              water_landing
+            }
+            flight
+            gridfins
+            land_success
+            landing_intent
+            landing_type
+            landing_vehicle
+            legs
+            reused
+          }
+        }
+        rocket {
+          active
+          boosters
+          company
+          cost_per_launch
+          country
+          description
+          diameter {
+            feet
+            meters
+          }
+          engines {
+            engine_loss_max
+            layout
+            number
+            propellant_1
+            propellant_2
+            thrust_sea_level {
+              kN
+              lbf
+            }
+            thrust_to_weight
+            thrust_vacuum {
+              kN
+              lbf
+            }
+            type
+            version
+          }
+          first_flight
+          first_stage {
+            burn_time_sec
+            engines
+            fuel_amount_tons
+            reusable
+            thrust_sea_level {
+              kN
+              lbf
+            }
+            thrust_vacuum {
+              kN
+              lbf
+            }
+          }
+          height {
+            feet
+            meters
+          }
+          id
+          landing_legs {
+            material
+            number
+          }
+          mass {
+            kg
+            lb
+          }
+          name
+          payload_weights {
+            id
+            kg
+            lb
+            name
+          }
+          second_stage {
+            burn_time_sec
+            engines
+            fuel_amount_tons
+            payloads {
+              composite_fairing {
+                diameter {
+                  feet
+                  meters
+                }
+                height {
+                  feet
+                  meters
+                }
+              }
+              option_1
+            }
+            thrust {
+              kN
+              lbf
+            }
+          }
+          stages
+          success_rate_pct
+          type
+          wikipedia
+        }
+        rocket_name
+        rocket_type
+        second_stage {
+          block
+          payloads {
+            customers
+            id
+            manufacturer
+            nationality
+            norad_id
+            orbit
+            orbit_params {
+              apoapsis_km
+              arg_of_pericenter
+              eccentricity
+              epoch
+              inclination_deg
+              lifespan_years
+              longitude
+              mean_anomaly
+              mean_motion
+              periapsis_km
+              period_min
+              raan
+              reference_system
+              regime
+              semi_major_axis_km
+            }
+            payload_mass_kg
+            payload_mass_lbs
+            payload_type
+            reused
+          }
+        }
+      }
+      ships {
+        abs
+        active
+        attempted_landings
+        class
+        course_deg
+        home_port
+        id
+        image
+        imo
+        missions {
+          flight
+          name
+        }
+        mmsi
+        model
+        name
+        position {
+          latitude
+          longitude
+        }
+        roles
+        speed_kn
+        status
+        successful_landings
+        type
+        url
+        weight_kg
+        weight_lbs
+        year_built
+      }
+      static_fire_date_unix
+      static_fire_date_utc
+      telemetry {
+        flight_club
+      }
+      tentative_max_precision
+      upcoming
+    }
+    id
+    links {
+      article
+      reddit
+      wikipedia
+    }
+    title
+  }
+}
+
+query landpad_query($id: ID!) {
+  landpad(id: $id) {
+    attempted_landings
+    details
+    full_name
+    id
+    landing_type
+    location {
+      latitude
+      longitude
+      name
+      region
+    }
+    status
+    successful_landings
+    wikipedia
+  }
+}
+
+query landpads_query($limit: Int, $offset: Int) {
+  landpads(limit: $limit, offset: $offset) {
+    attempted_landings
+    details
+    full_name
+    id
+    landing_type
+    location {
+      latitude
+      longitude
+      name
+      region
+    }
+    status
+    successful_landings
+    wikipedia
+  }
+}
+
+query launch_query($id: ID!) {
+  launch(id: $id) {
+    details
+    id
+    is_tentative
+    launch_date_local
+    launch_date_unix
+    launch_date_utc
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_success
+    launch_year
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+        ship
+      }
+      first_stage {
+        cores {
+          block
+          core {
+            asds_attempts
+            asds_landings
+            block
+            id
+            missions {
+              flight
+              name
+            }
+            original_launch
+            reuse_count
+            rtls_attempts
+            rtls_landings
+            status
+            water_landing
+          }
+          flight
+          gridfins
+          land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          legs
+          reused
+        }
+      }
+      rocket {
+        active
+        boosters
+        company
+        cost_per_launch
+        country
+        description
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          engine_loss_max
+          layout
+          number
+          propellant_1
+          propellant_2
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_to_weight
+          thrust_vacuum {
+            kN
+            lbf
+          }
+          type
+          version
+        }
+        first_flight
+        first_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          reusable
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_vacuum {
+            kN
+            lbf
+          }
+        }
+        height {
+          feet
+          meters
+        }
+        id
+        landing_legs {
+          material
+          number
+        }
+        mass {
+          kg
+          lb
+        }
+        name
+        payload_weights {
+          id
+          kg
+          lb
+          name
+        }
+        second_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          payloads {
+            composite_fairing {
+              diameter {
+                feet
+                meters
+              }
+              height {
+                feet
+                meters
+              }
+            }
+            option_1
+          }
+          thrust {
+            kN
+            lbf
+          }
+        }
+        stages
+        success_rate_pct
+        type
+        wikipedia
+      }
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          orbit_params {
+            apoapsis_km
+            arg_of_pericenter
+            eccentricity
+            epoch
+            inclination_deg
+            lifespan_years
+            longitude
+            mean_anomaly
+            mean_motion
+            periapsis_km
+            period_min
+            raan
+            reference_system
+            regime
+            semi_major_axis_km
+          }
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    ships {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    static_fire_date_unix
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}
+
+query launchLatest_query($offset: Int) {
+  launchLatest(offset: $offset) {
+    details
+    id
+    is_tentative
+    launch_date_local
+    launch_date_unix
+    launch_date_utc
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_success
+    launch_year
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+        ship
+      }
+      first_stage {
+        cores {
+          block
+          core {
+            asds_attempts
+            asds_landings
+            block
+            id
+            missions {
+              flight
+              name
+            }
+            original_launch
+            reuse_count
+            rtls_attempts
+            rtls_landings
+            status
+            water_landing
+          }
+          flight
+          gridfins
+          land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          legs
+          reused
+        }
+      }
+      rocket {
+        active
+        boosters
+        company
+        cost_per_launch
+        country
+        description
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          engine_loss_max
+          layout
+          number
+          propellant_1
+          propellant_2
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_to_weight
+          thrust_vacuum {
+            kN
+            lbf
+          }
+          type
+          version
+        }
+        first_flight
+        first_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          reusable
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_vacuum {
+            kN
+            lbf
+          }
+        }
+        height {
+          feet
+          meters
+        }
+        id
+        landing_legs {
+          material
+          number
+        }
+        mass {
+          kg
+          lb
+        }
+        name
+        payload_weights {
+          id
+          kg
+          lb
+          name
+        }
+        second_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          payloads {
+            composite_fairing {
+              diameter {
+                feet
+                meters
+              }
+              height {
+                feet
+                meters
+              }
+            }
+            option_1
+          }
+          thrust {
+            kN
+            lbf
+          }
+        }
+        stages
+        success_rate_pct
+        type
+        wikipedia
+      }
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          orbit_params {
+            apoapsis_km
+            arg_of_pericenter
+            eccentricity
+            epoch
+            inclination_deg
+            lifespan_years
+            longitude
+            mean_anomaly
+            mean_motion
+            periapsis_km
+            period_min
+            raan
+            reference_system
+            regime
+            semi_major_axis_km
+          }
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    ships {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    static_fire_date_unix
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}
+
+query launchNext_query($offset: Int) {
+  launchNext(offset: $offset) {
+    details
+    id
+    is_tentative
+    launch_date_local
+    launch_date_unix
+    launch_date_utc
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_success
+    launch_year
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+        ship
+      }
+      first_stage {
+        cores {
+          block
+          core {
+            asds_attempts
+            asds_landings
+            block
+            id
+            missions {
+              flight
+              name
+            }
+            original_launch
+            reuse_count
+            rtls_attempts
+            rtls_landings
+            status
+            water_landing
+          }
+          flight
+          gridfins
+          land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          legs
+          reused
+        }
+      }
+      rocket {
+        active
+        boosters
+        company
+        cost_per_launch
+        country
+        description
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          engine_loss_max
+          layout
+          number
+          propellant_1
+          propellant_2
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_to_weight
+          thrust_vacuum {
+            kN
+            lbf
+          }
+          type
+          version
+        }
+        first_flight
+        first_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          reusable
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_vacuum {
+            kN
+            lbf
+          }
+        }
+        height {
+          feet
+          meters
+        }
+        id
+        landing_legs {
+          material
+          number
+        }
+        mass {
+          kg
+          lb
+        }
+        name
+        payload_weights {
+          id
+          kg
+          lb
+          name
+        }
+        second_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          payloads {
+            composite_fairing {
+              diameter {
+                feet
+                meters
+              }
+              height {
+                feet
+                meters
+              }
+            }
+            option_1
+          }
+          thrust {
+            kN
+            lbf
+          }
+        }
+        stages
+        success_rate_pct
+        type
+        wikipedia
+      }
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          orbit_params {
+            apoapsis_km
+            arg_of_pericenter
+            eccentricity
+            epoch
+            inclination_deg
+            lifespan_years
+            longitude
+            mean_anomaly
+            mean_motion
+            periapsis_km
+            period_min
+            raan
+            reference_system
+            regime
+            semi_major_axis_km
+          }
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    ships {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    static_fire_date_unix
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}
+
+query launches_query($find: LaunchFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  launches(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    details
+    id
+    is_tentative
+    launch_date_local
+    launch_date_unix
+    launch_date_utc
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_success
+    launch_year
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+        ship
+      }
+      first_stage {
+        cores {
+          block
+          core {
+            asds_attempts
+            asds_landings
+            block
+            id
+            missions {
+              flight
+              name
+            }
+            original_launch
+            reuse_count
+            rtls_attempts
+            rtls_landings
+            status
+            water_landing
+          }
+          flight
+          gridfins
+          land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          legs
+          reused
+        }
+      }
+      rocket {
+        active
+        boosters
+        company
+        cost_per_launch
+        country
+        description
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          engine_loss_max
+          layout
+          number
+          propellant_1
+          propellant_2
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_to_weight
+          thrust_vacuum {
+            kN
+            lbf
+          }
+          type
+          version
+        }
+        first_flight
+        first_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          reusable
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_vacuum {
+            kN
+            lbf
+          }
+        }
+        height {
+          feet
+          meters
+        }
+        id
+        landing_legs {
+          material
+          number
+        }
+        mass {
+          kg
+          lb
+        }
+        name
+        payload_weights {
+          id
+          kg
+          lb
+          name
+        }
+        second_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          payloads {
+            composite_fairing {
+              diameter {
+                feet
+                meters
+              }
+              height {
+                feet
+                meters
+              }
+            }
+            option_1
+          }
+          thrust {
+            kN
+            lbf
+          }
+        }
+        stages
+        success_rate_pct
+        type
+        wikipedia
+      }
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          orbit_params {
+            apoapsis_km
+            arg_of_pericenter
+            eccentricity
+            epoch
+            inclination_deg
+            lifespan_years
+            longitude
+            mean_anomaly
+            mean_motion
+            periapsis_km
+            period_min
+            raan
+            reference_system
+            regime
+            semi_major_axis_km
+          }
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    ships {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    static_fire_date_unix
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}
+
+query launchesPast_query($find: LaunchFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  launchesPast(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    details
+    id
+    is_tentative
+    launch_date_local
+    launch_date_unix
+    launch_date_utc
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_success
+    launch_year
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+        ship
+      }
+      first_stage {
+        cores {
+          block
+          core {
+            asds_attempts
+            asds_landings
+            block
+            id
+            missions {
+              flight
+              name
+            }
+            original_launch
+            reuse_count
+            rtls_attempts
+            rtls_landings
+            status
+            water_landing
+          }
+          flight
+          gridfins
+          land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          legs
+          reused
+        }
+      }
+      rocket {
+        active
+        boosters
+        company
+        cost_per_launch
+        country
+        description
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          engine_loss_max
+          layout
+          number
+          propellant_1
+          propellant_2
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_to_weight
+          thrust_vacuum {
+            kN
+            lbf
+          }
+          type
+          version
+        }
+        first_flight
+        first_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          reusable
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_vacuum {
+            kN
+            lbf
+          }
+        }
+        height {
+          feet
+          meters
+        }
+        id
+        landing_legs {
+          material
+          number
+        }
+        mass {
+          kg
+          lb
+        }
+        name
+        payload_weights {
+          id
+          kg
+          lb
+          name
+        }
+        second_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          payloads {
+            composite_fairing {
+              diameter {
+                feet
+                meters
+              }
+              height {
+                feet
+                meters
+              }
+            }
+            option_1
+          }
+          thrust {
+            kN
+            lbf
+          }
+        }
+        stages
+        success_rate_pct
+        type
+        wikipedia
+      }
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          orbit_params {
+            apoapsis_km
+            arg_of_pericenter
+            eccentricity
+            epoch
+            inclination_deg
+            lifespan_years
+            longitude
+            mean_anomaly
+            mean_motion
+            periapsis_km
+            period_min
+            raan
+            reference_system
+            regime
+            semi_major_axis_km
+          }
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    ships {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    static_fire_date_unix
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}
+
+query launchesPastResult_query($find: LaunchFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  launchesPastResult(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    data {
+      details
+      id
+      is_tentative
+      launch_date_local
+      launch_date_unix
+      launch_date_utc
+      launch_site {
+        site_id
+        site_name
+        site_name_long
+      }
+      launch_success
+      launch_year
+      links {
+        article_link
+        flickr_images
+        mission_patch
+        mission_patch_small
+        presskit
+        reddit_campaign
+        reddit_launch
+        reddit_media
+        reddit_recovery
+        video_link
+        wikipedia
+      }
+      mission_id
+      mission_name
+      rocket {
+        fairings {
+          recovered
+          recovery_attempt
+          reused
+          ship
+        }
+        first_stage {
+          cores {
+            block
+            core {
+              asds_attempts
+              asds_landings
+              block
+              id
+              missions {
+                flight
+                name
+              }
+              original_launch
+              reuse_count
+              rtls_attempts
+              rtls_landings
+              status
+              water_landing
+            }
+            flight
+            gridfins
+            land_success
+            landing_intent
+            landing_type
+            landing_vehicle
+            legs
+            reused
+          }
+        }
+        rocket {
+          active
+          boosters
+          company
+          cost_per_launch
+          country
+          description
+          diameter {
+            feet
+            meters
+          }
+          engines {
+            engine_loss_max
+            layout
+            number
+            propellant_1
+            propellant_2
+            thrust_sea_level {
+              kN
+              lbf
+            }
+            thrust_to_weight
+            thrust_vacuum {
+              kN
+              lbf
+            }
+            type
+            version
+          }
+          first_flight
+          first_stage {
+            burn_time_sec
+            engines
+            fuel_amount_tons
+            reusable
+            thrust_sea_level {
+              kN
+              lbf
+            }
+            thrust_vacuum {
+              kN
+              lbf
+            }
+          }
+          height {
+            feet
+            meters
+          }
+          id
+          landing_legs {
+            material
+            number
+          }
+          mass {
+            kg
+            lb
+          }
+          name
+          payload_weights {
+            id
+            kg
+            lb
+            name
+          }
+          second_stage {
+            burn_time_sec
+            engines
+            fuel_amount_tons
+            payloads {
+              composite_fairing {
+                diameter {
+                  feet
+                  meters
+                }
+                height {
+                  feet
+                  meters
+                }
+              }
+              option_1
+            }
+            thrust {
+              kN
+              lbf
+            }
+          }
+          stages
+          success_rate_pct
+          type
+          wikipedia
+        }
+        rocket_name
+        rocket_type
+        second_stage {
+          block
+          payloads {
+            customers
+            id
+            manufacturer
+            nationality
+            norad_id
+            orbit
+            orbit_params {
+              apoapsis_km
+              arg_of_pericenter
+              eccentricity
+              epoch
+              inclination_deg
+              lifespan_years
+              longitude
+              mean_anomaly
+              mean_motion
+              periapsis_km
+              period_min
+              raan
+              reference_system
+              regime
+              semi_major_axis_km
+            }
+            payload_mass_kg
+            payload_mass_lbs
+            payload_type
+            reused
+          }
+        }
+      }
+      ships {
+        abs
+        active
+        attempted_landings
+        class
+        course_deg
+        home_port
+        id
+        image
+        imo
+        missions {
+          flight
+          name
+        }
+        mmsi
+        model
+        name
+        position {
+          latitude
+          longitude
+        }
+        roles
+        speed_kn
+        status
+        successful_landings
+        type
+        url
+        weight_kg
+        weight_lbs
+        year_built
+      }
+      static_fire_date_unix
+      static_fire_date_utc
+      telemetry {
+        flight_club
+      }
+      tentative_max_precision
+      upcoming
+    }
+    result {
+      totalCount
+    }
+  }
+}
+
+query launchesUpcoming_query($find: LaunchFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  launchesUpcoming(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    details
+    id
+    is_tentative
+    launch_date_local
+    launch_date_unix
+    launch_date_utc
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_success
+    launch_year
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    mission_id
+    mission_name
+    rocket {
+      fairings {
+        recovered
+        recovery_attempt
+        reused
+        ship
+      }
+      first_stage {
+        cores {
+          block
+          core {
+            asds_attempts
+            asds_landings
+            block
+            id
+            missions {
+              flight
+              name
+            }
+            original_launch
+            reuse_count
+            rtls_attempts
+            rtls_landings
+            status
+            water_landing
+          }
+          flight
+          gridfins
+          land_success
+          landing_intent
+          landing_type
+          landing_vehicle
+          legs
+          reused
+        }
+      }
+      rocket {
+        active
+        boosters
+        company
+        cost_per_launch
+        country
+        description
+        diameter {
+          feet
+          meters
+        }
+        engines {
+          engine_loss_max
+          layout
+          number
+          propellant_1
+          propellant_2
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_to_weight
+          thrust_vacuum {
+            kN
+            lbf
+          }
+          type
+          version
+        }
+        first_flight
+        first_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          reusable
+          thrust_sea_level {
+            kN
+            lbf
+          }
+          thrust_vacuum {
+            kN
+            lbf
+          }
+        }
+        height {
+          feet
+          meters
+        }
+        id
+        landing_legs {
+          material
+          number
+        }
+        mass {
+          kg
+          lb
+        }
+        name
+        payload_weights {
+          id
+          kg
+          lb
+          name
+        }
+        second_stage {
+          burn_time_sec
+          engines
+          fuel_amount_tons
+          payloads {
+            composite_fairing {
+              diameter {
+                feet
+                meters
+              }
+              height {
+                feet
+                meters
+              }
+            }
+            option_1
+          }
+          thrust {
+            kN
+            lbf
+          }
+        }
+        stages
+        success_rate_pct
+        type
+        wikipedia
+      }
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          orbit_params {
+            apoapsis_km
+            arg_of_pericenter
+            eccentricity
+            epoch
+            inclination_deg
+            lifespan_years
+            longitude
+            mean_anomaly
+            mean_motion
+            periapsis_km
+            period_min
+            raan
+            reference_system
+            regime
+            semi_major_axis_km
+          }
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    ships {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    static_fire_date_unix
+    static_fire_date_utc
+    telemetry {
+      flight_club
+    }
+    tentative_max_precision
+    upcoming
+  }
+}
+
+query launchpad_query($id: ID!) {
+  launchpad(id: $id) {
+    attempted_launches
+    details
+    id
+    location {
+      latitude
+      longitude
+      name
+      region
+    }
+    name
+    status
+    successful_launches
+    vehicles_launched {
+      active
+      boosters
+      company
+      cost_per_launch
+      country
+      description
+      diameter {
+        feet
+        meters
+      }
+      engines {
+        engine_loss_max
+        layout
+        number
+        propellant_1
+        propellant_2
+        thrust_sea_level {
+          kN
+          lbf
+        }
+        thrust_to_weight
+        thrust_vacuum {
+          kN
+          lbf
+        }
+        type
+        version
+      }
+      first_flight
+      first_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        reusable
+        thrust_sea_level {
+          kN
+          lbf
+        }
+        thrust_vacuum {
+          kN
+          lbf
+        }
+      }
+      height {
+        feet
+        meters
+      }
+      id
+      landing_legs {
+        material
+        number
+      }
+      mass {
+        kg
+        lb
+      }
+      name
+      payload_weights {
+        id
+        kg
+        lb
+        name
+      }
+      second_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        payloads {
+          composite_fairing {
+            diameter {
+              feet
+              meters
+            }
+            height {
+              feet
+              meters
+            }
+          }
+          option_1
+        }
+        thrust {
+          kN
+          lbf
+        }
+      }
+      stages
+      success_rate_pct
+      type
+      wikipedia
+    }
+    wikipedia
+  }
+}
+
+query launchpads_query($limit: Int, $offset: Int) {
+  launchpads(limit: $limit, offset: $offset) {
+    attempted_launches
+    details
+    id
+    location {
+      latitude
+      longitude
+      name
+      region
+    }
+    name
+    status
+    successful_launches
+    vehicles_launched {
+      active
+      boosters
+      company
+      cost_per_launch
+      country
+      description
+      diameter {
+        feet
+        meters
+      }
+      engines {
+        engine_loss_max
+        layout
+        number
+        propellant_1
+        propellant_2
+        thrust_sea_level {
+          kN
+          lbf
+        }
+        thrust_to_weight
+        thrust_vacuum {
+          kN
+          lbf
+        }
+        type
+        version
+      }
+      first_flight
+      first_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        reusable
+        thrust_sea_level {
+          kN
+          lbf
+        }
+        thrust_vacuum {
+          kN
+          lbf
+        }
+      }
+      height {
+        feet
+        meters
+      }
+      id
+      landing_legs {
+        material
+        number
+      }
+      mass {
+        kg
+        lb
+      }
+      name
+      payload_weights {
+        id
+        kg
+        lb
+        name
+      }
+      second_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        payloads {
+          composite_fairing {
+            diameter {
+              feet
+              meters
+            }
+            height {
+              feet
+              meters
+            }
+          }
+          option_1
+        }
+        thrust {
+          kN
+          lbf
+        }
+      }
+      stages
+      success_rate_pct
+      type
+      wikipedia
+    }
+    wikipedia
+  }
+}
+
+query mission_query($id: ID!) {
+  mission(id: $id) {
+    description
+    id
+    manufacturers
+    name
+    payloads {
+      customers
+      id
+      manufacturer
+      nationality
+      norad_id
+      orbit
+      orbit_params {
+        apoapsis_km
+        arg_of_pericenter
+        eccentricity
+        epoch
+        inclination_deg
+        lifespan_years
+        longitude
+        mean_anomaly
+        mean_motion
+        periapsis_km
+        period_min
+        raan
+        reference_system
+        regime
+        semi_major_axis_km
+      }
+      payload_mass_kg
+      payload_mass_lbs
+      payload_type
+      reused
+    }
+    twitter
+    website
+    wikipedia
+  }
+}
+
+query missions_query($find: MissionsFind, $limit: Int, $offset: Int) {
+  missions(find: $find, limit: $limit, offset: $offset) {
+    description
+    id
+    manufacturers
+    name
+    payloads {
+      customers
+      id
+      manufacturer
+      nationality
+      norad_id
+      orbit
+      orbit_params {
+        apoapsis_km
+        arg_of_pericenter
+        eccentricity
+        epoch
+        inclination_deg
+        lifespan_years
+        longitude
+        mean_anomaly
+        mean_motion
+        periapsis_km
+        period_min
+        raan
+        reference_system
+        regime
+        semi_major_axis_km
+      }
+      payload_mass_kg
+      payload_mass_lbs
+      payload_type
+      reused
+    }
+    twitter
+    website
+    wikipedia
+  }
+}
+
+query missionsResult_query($find: MissionsFind, $limit: Int, $offset: Int) {
+  missionsResult(find: $find, limit: $limit, offset: $offset) {
+    data {
+      description
+      id
+      manufacturers
+      name
+      payloads {
+        customers
+        id
+        manufacturer
+        nationality
+        norad_id
+        orbit
+        orbit_params {
+          apoapsis_km
+          arg_of_pericenter
+          eccentricity
+          epoch
+          inclination_deg
+          lifespan_years
+          longitude
+          mean_anomaly
+          mean_motion
+          periapsis_km
+          period_min
+          raan
+          reference_system
+          regime
+          semi_major_axis_km
+        }
+        payload_mass_kg
+        payload_mass_lbs
+        payload_type
+        reused
+      }
+      twitter
+      website
+      wikipedia
+    }
+    result {
+      totalCount
+    }
+  }
+}
+
+query payload_query($id: ID!) {
+  payload(id: $id) {
+    customers
+    id
+    manufacturer
+    nationality
+    norad_id
+    orbit
+    orbit_params {
+      apoapsis_km
+      arg_of_pericenter
+      eccentricity
+      epoch
+      inclination_deg
+      lifespan_years
+      longitude
+      mean_anomaly
+      mean_motion
+      periapsis_km
+      period_min
+      raan
+      reference_system
+      regime
+      semi_major_axis_km
+    }
+    payload_mass_kg
+    payload_mass_lbs
+    payload_type
+    reused
+  }
+}
+
+query payloads_query($find: PayloadsFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  payloads(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    customers
+    id
+    manufacturer
+    nationality
+    norad_id
+    orbit
+    orbit_params {
+      apoapsis_km
+      arg_of_pericenter
+      eccentricity
+      epoch
+      inclination_deg
+      lifespan_years
+      longitude
+      mean_anomaly
+      mean_motion
+      periapsis_km
+      period_min
+      raan
+      reference_system
+      regime
+      semi_major_axis_km
+    }
+    payload_mass_kg
+    payload_mass_lbs
+    payload_type
+    reused
+  }
+}
+
+query roadster_query {
+  roadster {
+    apoapsis_au
+    details
+    earth_distance_km
+    earth_distance_mi
+    eccentricity
+    epoch_jd
+    inclination
+    launch_date_unix
+    launch_date_utc
+    launch_mass_kg
+    launch_mass_lbs
+    longitude
+    mars_distance_km
+    mars_distance_mi
+    name
+    norad_id
+    orbit_type
+    periapsis_arg
+    periapsis_au
+    period_days
+    semi_major_axis_au
+    speed_kph
+    speed_mph
+    wikipedia
+  }
+}
+
+query rocket_query($id: ID!) {
+  rocket(id: $id) {
+    active
+    boosters
+    company
+    cost_per_launch
+    country
+    description
+    diameter {
+      feet
+      meters
+    }
+    engines {
+      engine_loss_max
+      layout
+      number
+      propellant_1
+      propellant_2
+      thrust_sea_level {
+        kN
+        lbf
+      }
+      thrust_to_weight
+      thrust_vacuum {
+        kN
+        lbf
+      }
+      type
+      version
+    }
+    first_flight
+    first_stage {
+      burn_time_sec
+      engines
+      fuel_amount_tons
+      reusable
+      thrust_sea_level {
+        kN
+        lbf
+      }
+      thrust_vacuum {
+        kN
+        lbf
+      }
+    }
+    height {
+      feet
+      meters
+    }
+    id
+    landing_legs {
+      material
+      number
+    }
+    mass {
+      kg
+      lb
+    }
+    name
+    payload_weights {
+      id
+      kg
+      lb
+      name
+    }
+    second_stage {
+      burn_time_sec
+      engines
+      fuel_amount_tons
+      payloads {
+        composite_fairing {
+          diameter {
+            feet
+            meters
+          }
+          height {
+            feet
+            meters
+          }
+        }
+        option_1
+      }
+      thrust {
+        kN
+        lbf
+      }
+    }
+    stages
+    success_rate_pct
+    type
+    wikipedia
+  }
+}
+
+query rockets_query($limit: Int, $offset: Int) {
+  rockets(limit: $limit, offset: $offset) {
+    active
+    boosters
+    company
+    cost_per_launch
+    country
+    description
+    diameter {
+      feet
+      meters
+    }
+    engines {
+      engine_loss_max
+      layout
+      number
+      propellant_1
+      propellant_2
+      thrust_sea_level {
+        kN
+        lbf
+      }
+      thrust_to_weight
+      thrust_vacuum {
+        kN
+        lbf
+      }
+      type
+      version
+    }
+    first_flight
+    first_stage {
+      burn_time_sec
+      engines
+      fuel_amount_tons
+      reusable
+      thrust_sea_level {
+        kN
+        lbf
+      }
+      thrust_vacuum {
+        kN
+        lbf
+      }
+    }
+    height {
+      feet
+      meters
+    }
+    id
+    landing_legs {
+      material
+      number
+    }
+    mass {
+      kg
+      lb
+    }
+    name
+    payload_weights {
+      id
+      kg
+      lb
+      name
+    }
+    second_stage {
+      burn_time_sec
+      engines
+      fuel_amount_tons
+      payloads {
+        composite_fairing {
+          diameter {
+            feet
+            meters
+          }
+          height {
+            feet
+            meters
+          }
+        }
+        option_1
+      }
+      thrust {
+        kN
+        lbf
+      }
+    }
+    stages
+    success_rate_pct
+    type
+    wikipedia
+  }
+}
+
+query rocketsResult_query($limit: Int, $offset: Int) {
+  rocketsResult(limit: $limit, offset: $offset) {
+    data {
+      active
+      boosters
+      company
+      cost_per_launch
+      country
+      description
+      diameter {
+        feet
+        meters
+      }
+      engines {
+        engine_loss_max
+        layout
+        number
+        propellant_1
+        propellant_2
+        thrust_sea_level {
+          kN
+          lbf
+        }
+        thrust_to_weight
+        thrust_vacuum {
+          kN
+          lbf
+        }
+        type
+        version
+      }
+      first_flight
+      first_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        reusable
+        thrust_sea_level {
+          kN
+          lbf
+        }
+        thrust_vacuum {
+          kN
+          lbf
+        }
+      }
+      height {
+        feet
+        meters
+      }
+      id
+      landing_legs {
+        material
+        number
+      }
+      mass {
+        kg
+        lb
+      }
+      name
+      payload_weights {
+        id
+        kg
+        lb
+        name
+      }
+      second_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        payloads {
+          composite_fairing {
+            diameter {
+              feet
+              meters
+            }
+            height {
+              feet
+              meters
+            }
+          }
+          option_1
+        }
+        thrust {
+          kN
+          lbf
+        }
+      }
+      stages
+      success_rate_pct
+      type
+      wikipedia
+    }
+    result {
+      totalCount
+    }
+  }
+}
+
+query ship_query($id: ID!) {
+  ship(id: $id) {
+    abs
+    active
+    attempted_landings
+    class
+    course_deg
+    home_port
+    id
+    image
+    imo
+    missions {
+      flight
+      name
+    }
+    mmsi
+    model
+    name
+    position {
+      latitude
+      longitude
+    }
+    roles
+    speed_kn
+    status
+    successful_landings
+    type
+    url
+    weight_kg
+    weight_lbs
+    year_built
+  }
+}
+
+query ships_query($find: ShipsFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  ships(find: $find, limit: $limit, offset: $offset, order: $order, sort: $sort) {
+    abs
+    active
+    attempted_landings
+    class
+    course_deg
+    home_port
+    id
+    image
+    imo
+    missions {
+      flight
+      name
+    }
+    mmsi
+    model
+    name
+    position {
+      latitude
+      longitude
+    }
+    roles
+    speed_kn
+    status
+    successful_landings
+    type
+    url
+    weight_kg
+    weight_lbs
+    year_built
+  }
+}
+
+query shipsResult_query($find: ShipsFind, $limit: Int, $offset: Int, $order: String, $sort: String) {
+  shipsResult(
+    find: $find
+    limit: $limit
+    offset: $offset
+    order: $order
+    sort: $sort
+  ) {
+    data {
+      abs
+      active
+      attempted_landings
+      class
+      course_deg
+      home_port
+      id
+      image
+      imo
+      missions {
+        flight
+        name
+      }
+      mmsi
+      model
+      name
+      position {
+        latitude
+        longitude
+      }
+      roles
+      speed_kn
+      status
+      successful_landings
+      type
+      url
+      weight_kg
+      weight_lbs
+      year_built
+    }
+    result {
+      totalCount
+    }
+  }
+}
+
+query users_query($distinct_on: [users_select_column!], $limit: Int, $offset: Int, $order_by: [users_order_by!], $where: users_bool_exp) {
+  users(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    id
+    name
+    rocket
+    timestamp
+    twitter
+  }
+}
+
+query users_aggregate_query($distinct_on: [users_select_column!], $limit: Int, $offset: Int, $order_by: [users_order_by!], $where: users_bool_exp, $users_aggregate_aggregate_aggregate_count_columns: [users_select_column!], $users_aggregate_aggregate_aggregate_count_distinct: Boolean) {
+  users_aggregate(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    aggregate {
+      count(
+        columns: $users_aggregate_aggregate_aggregate_count_columns
+        distinct: $users_aggregate_aggregate_aggregate_count_distinct
+      )
+      max {
+        name
+        rocket
+        timestamp
+        twitter
+      }
+      min {
+        name
+        rocket
+        timestamp
+        twitter
+      }
+    }
+    nodes {
+      id
+      name
+      rocket
+      timestamp
+      twitter
+    }
+  }
+}
+
+query users_by_pk_query($id: uuid!) {
+  users_by_pk(id: $id) {
+    id
+    name
+    rocket
+    timestamp
+    twitter
+  }
+}
+
+mutation delete_users_mutation($where: users_bool_exp!) {
+  delete_users(where: $where) {
+    affected_rows
+    returning {
+      id
+      name
+      rocket
+      timestamp
+      twitter
+    }
+  }
+}
+
+mutation insert_users_mutation($objects: [users_insert_input!]!, $on_conflict: users_on_conflict) {
+  insert_users(objects: $objects, on_conflict: $on_conflict) {
+    affected_rows
+    returning {
+      id
+      name
+      rocket
+      timestamp
+      twitter
+    }
+  }
+}
+
+mutation update_users_mutation($_set: users_set_input, $where: users_bool_exp!) {
+  update_users(_set: $_set, where: $where) {
+    affected_rows
+    returning {
+      id
+      name
+      rocket
+      timestamp
+      twitter
+    }
+  }
+}
+
+subscription users_subscription($distinct_on: [users_select_column!], $limit: Int, $offset: Int, $order_by: [users_order_by!], $where: users_bool_exp) {
+  users(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    id
+    name
+    rocket
+    timestamp
+    twitter
+  }
+}
+
+subscription users_aggregate_subscription($distinct_on: [users_select_column!], $limit: Int, $offset: Int, $order_by: [users_order_by!], $where: users_bool_exp, $users_aggregate_aggregate_aggregate_count_columns: [users_select_column!], $users_aggregate_aggregate_aggregate_count_distinct: Boolean) {
+  users_aggregate(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    aggregate {
+      count(
+        columns: $users_aggregate_aggregate_aggregate_count_columns
+        distinct: $users_aggregate_aggregate_aggregate_count_distinct
+      )
+      max {
+        name
+        rocket
+        timestamp
+        twitter
+      }
+      min {
+        name
+        rocket
+        timestamp
+        twitter
+      }
+    }
+    nodes {
+      id
+      name
+      rocket
+      timestamp
+      twitter
+    }
+  }
+}
+
+subscription users_by_pk_subscription($id: uuid!) {
+  users_by_pk(id: $id) {
+    id
+    name
+    rocket
+    timestamp
+    twitter
+  }
+}

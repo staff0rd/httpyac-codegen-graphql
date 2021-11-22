@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "downlevelIteration": true
+  },
+  "include": ["src"]
+}

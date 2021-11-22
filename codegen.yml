@@ -1,10 +1,21 @@
 overwrite: true
-schema: "https://api.spacexdata.com/v4"
+schema: "https://api.spacex.land/graphql"
 documents: null
 generates:
-  src/generated/graphql.ts:
+  # generated/graphql.ts:
+  #   plugins:
+  #     - "typescript"
+  # generated/graphql.schema.json:
+  #   plugins:
+  #     - "introspection"
+  # generated/output.graphql:
+  #   - dist/my-plugin.js
+  # generated/schema.graphql:
+  #   plugins:
+  #     - schema-ast
+  # generated/types.ts:
+  #   - typescript
+  generated/src:
+    #preset: dist/my-preset.js
     plugins:
-      - "typescript"
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"
+      - dist/my-plugin.js

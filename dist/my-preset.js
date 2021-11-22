@@ -1,0 +1,235 @@
+"use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __values = (this && this.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+exports.__esModule = true;
+exports.preset = exports.resolveDocumentImports = void 0;
+var utils_1 = require("@graphql-tools/utils");
+var add_1 = require("@graphql-codegen/add");
+var path_1 = require("path");
+var graphql_1 = require("graphql");
+var utils_2 = require("./utils");
+var resolve_document_imports_1 = require("./resolve-document-imports");
+exports.resolveDocumentImports = resolve_document_imports_1.resolveDocumentImports;
+var visitor_plugin_common_1 = require("@graphql-codegen/visitor-plugin-common");
+exports.preset = {
+    buildGeneratesSection: function (options) {
+        var e_1, _a, e_2, _b, e_3, _c, _d, _e, _f, e_4, _g;
+        var _h;
+        var schemaObject = options.schemaAst
+            ? options.schemaAst
+            : (0, graphql_1.buildASTSchema)(options.schema, options.config);
+        var baseDir = options.presetConfig.cwd || process.cwd();
+        var extension = options.presetConfig.extension || ".generated.ts";
+        var folder = options.presetConfig.folder || "";
+        var importTypesNamespace = options.presetConfig.importTypesNamespace || "Types";
+        var importAllFragmentsFrom = options.presetConfig.importAllFragmentsFrom || null;
+        var rootTypeMap = (0, utils_1.getRootTypeMap)(schemaObject);
+        var definitions = [];
+        try {
+            for (var rootTypeMap_1 = __values(rootTypeMap), rootTypeMap_1_1 = rootTypeMap_1.next(); !rootTypeMap_1_1.done; rootTypeMap_1_1 = rootTypeMap_1.next()) {
+                var _j = __read(rootTypeMap_1_1.value, 2), kind = _j[0], rootType = _j[1];
+                for (var field in rootType.getFields()) {
+                    var operationDefinitionNode = (0, utils_1.buildOperationNodeForField)({
+                        schema: schemaObject,
+                        kind: kind,
+                        field: field,
+                        depthLimit: 3,
+                        circularReferenceDepth: 1
+                    });
+                    definitions.push(operationDefinitionNode);
+                    //console.error("root", field, print(operationDefinitionNode));
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (rootTypeMap_1_1 && !rootTypeMap_1_1.done && (_a = rootTypeMap_1["return"])) _a.call(rootTypeMap_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        var pluginMap = __assign(__assign({}, options.pluginMap), { add: add_1["default"] });
+        return [
+            __assign(__assign({}, options), { filename: "test.out.something", documents: null }),
+        ];
+        // return definitions.map((a) => ({
+        //   filename: a.name.value,
+        //   documents: null,
+        //   plugins: options.plugins,
+        //   pluginMap,
+        //   config: options.config,
+        //   schema: options.schema,
+        //   schemaAst: schemaObject,
+        //   skipDocumentsValidation: true,
+        // }));
+        var baseTypesPath = options.presetConfig.baseTypesPath;
+        if (!baseTypesPath) {
+            throw new Error("Preset \"near-operation-file\" requires you to specify \"baseTypesPath\" configuration and point it to your base types file (generated by \"typescript\" plugin)!");
+        }
+        var shouldAbsolute = !baseTypesPath.startsWith("~");
+        var sources = (0, resolve_document_imports_1.resolveDocumentImports)(options, schemaObject, {
+            baseDir: baseDir,
+            generateFilePath: function (location) {
+                var newFilePath = (0, utils_2.defineFilepathSubfolder)(location, folder);
+                return (0, utils_2.appendExtensionToFilePath)(newFilePath, extension);
+            },
+            schemaTypesSource: {
+                path: shouldAbsolute
+                    ? (0, path_1.join)(options.baseOutputDir, baseTypesPath)
+                    : baseTypesPath,
+                namespace: importTypesNamespace
+            },
+            typesImport: (_h = options.config.useTypeImports) !== null && _h !== void 0 ? _h : false
+        }, (0, visitor_plugin_common_1.getConfigValue)(options.config.dedupeFragments, false));
+        var filePathsMap = new Map();
+        try {
+            for (var sources_1 = __values(sources), sources_1_1 = sources_1.next(); !sources_1_1.done; sources_1_1 = sources_1.next()) {
+                var source = sources_1_1.value;
+                var record = filePathsMap.get(source.filename);
+                if (record === undefined) {
+                    record = {
+                        importStatements: new Set(),
+                        documents: [],
+                        externalFragments: [],
+                        fragmentImports: []
+                    };
+                    filePathsMap.set(source.filename, record);
+                }
+                try {
+                    for (var _k = (e_3 = void 0, __values(source.importStatements)), _l = _k.next(); !_l.done; _l = _k.next()) {
+                        var importStatement = _l.value;
+                        record.importStatements.add(importStatement);
+                    }
+                }
+                catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                finally {
+                    try {
+                        if (_l && !_l.done && (_c = _k["return"])) _c.call(_k);
+                    }
+                    finally { if (e_3) throw e_3.error; }
+                }
+                (_d = record.documents).push.apply(_d, __spreadArray([], __read(source.documents), false));
+                (_e = record.externalFragments).push.apply(_e, __spreadArray([], __read(source.externalFragments), false));
+                (_f = record.fragmentImports).push.apply(_f, __spreadArray([], __read(source.fragmentImports), false));
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (sources_1_1 && !sources_1_1.done && (_b = sources_1["return"])) _b.call(sources_1);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+        var artifacts = [];
+        var _loop_1 = function (filename, record) {
+            var e_5, _q, _r;
+            var fragmentImportsArr = record.fragmentImports;
+            if (importAllFragmentsFrom) {
+                fragmentImportsArr = record.fragmentImports.map(function (t) {
+                    var newImportSource = typeof importAllFragmentsFrom === "string"
+                        ? __assign(__assign({}, t.importSource), { path: importAllFragmentsFrom }) : importAllFragmentsFrom(t.importSource, filename);
+                    return __assign(__assign({}, t), { importSource: newImportSource || t.importSource });
+                });
+            }
+            var plugins = __spreadArray(__spreadArray([], __read((options.config.globalNamespace
+                ? []
+                : Array.from(record.importStatements).map(function (importStatement) { return ({
+                    add: { content: importStatement }
+                }); }))), false), __read(options.plugins), false);
+            var config = __assign(__assign({}, options.config), { 
+                // This is set here in order to make sure the fragment spreads sub types
+                // are exported from operations file
+                exportFragmentSpreadSubTypes: true, namespacedImportName: importTypesNamespace, externalFragments: record.externalFragments, fragmentImports: fragmentImportsArr });
+            var document_1 = { kind: graphql_1.Kind.DOCUMENT, definitions: [] };
+            var combinedSource = {
+                rawSDL: "",
+                document: document_1,
+                location: record.documents[0].location
+            };
+            try {
+                for (var _s = (e_5 = void 0, __values(record.documents)), _t = _s.next(); !_t.done; _t = _s.next()) {
+                    var source = _t.value;
+                    combinedSource.rawSDL += source.rawSDL;
+                    (_r = combinedSource.document.definitions).push.apply(_r, __spreadArray([], __read(source.document.definitions), false));
+                }
+            }
+            catch (e_5_1) { e_5 = { error: e_5_1 }; }
+            finally {
+                try {
+                    if (_t && !_t.done && (_q = _s["return"])) _q.call(_s);
+                }
+                finally { if (e_5) throw e_5.error; }
+            }
+            artifacts.push({
+                filename: filename,
+                documents: [combinedSource],
+                plugins: plugins,
+                pluginMap: pluginMap,
+                config: config,
+                schema: options.schema,
+                schemaAst: schemaObject,
+                skipDocumentsValidation: true
+            });
+        };
+        try {
+            for (var _m = __values(filePathsMap.entries()), _o = _m.next(); !_o.done; _o = _m.next()) {
+                var _p = __read(_o.value, 2), filename = _p[0], record = _p[1];
+                _loop_1(filename, record);
+            }
+        }
+        catch (e_4_1) { e_4 = { error: e_4_1 }; }
+        finally {
+            try {
+                if (_o && !_o.done && (_g = _m["return"])) _g.call(_m);
+            }
+            finally { if (e_4) throw e_4.error; }
+        }
+        return artifacts;
+    }
+};
+exports["default"] = exports.preset;
