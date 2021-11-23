@@ -10,9 +10,21 @@ export interface Config {
    */
   circularReferenceDepth?: number;
 
-  variables?: [
-    {
-      [request: string]: [{ [variable: string]: string }];
-    }
-  ];
+  /**
+   * @description The host that requests will be sent to
+   */
+  host: string;
+
+  /**
+   * @description Variable definitions for any requests that need them
+   */
+  variables?: {
+    [request: string]: { [variable: string]: string };
+  };
+
+  /**
+   * @default *
+   * @description Which requests will be generated
+   */
+  include: string | string[];
 }
