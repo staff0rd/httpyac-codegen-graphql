@@ -8,6 +8,6 @@ generates:
       variables:
         ship_query:
           id: HAWK
-      include: cores_query
+      include: core_query
     plugins:
       - dist/empty.js
