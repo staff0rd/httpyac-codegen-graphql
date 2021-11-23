@@ -41,13 +41,15 @@ exports.__esModule = true;
 exports.preset = void 0;
 var addPlugin = require("@graphql-codegen/add");
 var utils_1 = require("@graphql-tools/utils");
-var graphql_1 = require("graphql");
+var generateHttpFile_1 = require("./generateHttpFile");
 exports.preset = {
     buildGeneratesSection: function (options) {
         var e_1, _a, _b;
-        var schema = options.schemaAst, _c = options.config, _d = _c.depthLimit, depthLimit = _d === void 0 ? 10 : _d, _e = _c.circularReferenceDepth, circularReferenceDepth = _e === void 0 ? 1 : _e;
+        var schema = options.schemaAst, _c = options.config, _d = _c.depthLimit, depthLimit = _d === void 0 ? 10 : _d, _e = _c.circularReferenceDepth, circularReferenceDepth = _e === void 0 ? 1 : _e, presetConfig = options.presetConfig;
         if (!schema)
             throw new Error("Missing schema AST");
+        if (!presetConfig.host)
+            throw new Error("Must specify a host");
         var rootTypeMap = (0, utils_1.getRootTypeMap)(schema);
         var definitions = [];
         try {
@@ -73,16 +75,29 @@ exports.preset = {
             finally { if (e_1) throw e_1.error; }
         }
         var pluginMap = __assign(__assign({}, options.pluginMap), (_b = {}, _b["add"] = addPlugin, _b));
-        return definitions.map(function (d) {
-            var _a;
-            return (__assign(__assign({}, options), { pluginMap: pluginMap, plugins: [
-                    (_a = {},
-                        _a["add"] = {
-                            content: "POST {{HOST}}\nContent-Type: application/json\n\n" + (0, graphql_1.print)(d)
-                        },
-                        _a),
-                ], filename: "".concat(options.baseOutputDir, "/").concat(d.name.value, ".http") }));
-        });
+        var buildArtifacts = function (operations) {
+            return operations.map(function (operation) {
+                var _a;
+                return (__assign(__assign({}, options), { pluginMap: pluginMap, plugins: [
+                        (_a = {},
+                            _a["add"] = {
+                                content: (0, generateHttpFile_1.generateHttpFile)(operation, presetConfig)
+                            },
+                            _a),
+                    ], filename: "".concat(options.baseOutputDir, "/").concat(operation.name.value, ".http") }));
+            });
+        };
+        if (presetConfig.include && presetConfig.include !== "*") {
+            if (Array.isArray(presetConfig.include)) {
+                return buildArtifacts(definitions.filter(function (definition) {
+                    return presetConfig.include.includes(definition.name.value);
+                }));
+            }
+            else {
+                return buildArtifacts(definitions.filter(function (definition) { return definition.name.value === presetConfig.include; }));
+            }
+        }
+        return buildArtifacts(definitions);
     }
 };
 exports["default"] = exports.preset;

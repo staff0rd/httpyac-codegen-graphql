@@ -4,8 +4,10 @@ generates:
   output:
     preset: dist/preset.js
     presetConfig:
+      host: https://api.spacex.land/graphql
       variables:
-        - ship_query:
-            - id: HAWK
+        ship_query:
+          id: HAWK
+      include: cores_query
     plugins:
       - dist/empty.js

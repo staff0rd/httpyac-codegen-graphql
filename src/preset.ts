@@ -4,17 +4,21 @@ import {
   buildOperationNodeForField,
   getRootTypeMap,
 } from "@graphql-tools/utils";
-import { OperationDefinitionNode, print } from "graphql";
+import { OperationDefinitionNode } from "graphql";
 import { Config } from "./Config";
+import { generateHttpFile } from "./generateHttpFile";
 
 export const preset: Types.OutputPreset<Config> = {
   buildGeneratesSection: (options) => {
     const {
       schemaAst: schema,
       config: { depthLimit = 10, circularReferenceDepth = 1 },
+      presetConfig,
     } = options;
 
     if (!schema) throw new Error(`Missing schema AST`);
+
+    if (!presetConfig.host) throw new Error(`Must specify a host`);
 
     const rootTypeMap = getRootTypeMap(schema);
     const definitions: OperationDefinitionNode[] = [];
@@ -37,20 +41,37 @@ export const preset: Types.OutputPreset<Config> = {
       [`add`]: addPlugin,
     };
 
-    return definitions.map((d) => ({
-      ...options,
-      pluginMap,
-      plugins: [
-        {
-          [`add`]: {
-            content:
-              `POST {{HOST}}\nContent-Type: application/json\n\n` + print(d),
+    const buildArtifacts = (operations: OperationDefinitionNode[]) =>
+      operations.map((operation) => ({
+        ...options,
+        pluginMap,
+        plugins: [
+          {
+            [`add`]: {
+              content: generateHttpFile(operation, presetConfig),
+            },
           },
-        },
-      ],
-      filename: `${options.baseOutputDir}/${d.name.value}.http`,
-      //documents: null,
-    }));
+        ],
+        filename: `${options.baseOutputDir}/${operation.name.value}.http`,
+      }));
+
+    if (presetConfig.include && presetConfig.include !== "*") {
+      if (Array.isArray(presetConfig.include)) {
+        return buildArtifacts(
+          definitions.filter((definition) =>
+            presetConfig.include.includes(definition.name.value)
+          )
+        );
+      } else {
+        return buildArtifacts(
+          definitions.filter(
+            (definition) => definition.name.value === presetConfig.include
+          )
+        );
+      }
+    }
+
+    return buildArtifacts(definitions);
   },
 };
 
