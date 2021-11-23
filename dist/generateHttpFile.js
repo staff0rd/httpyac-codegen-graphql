@@ -2,7 +2,9 @@
 exports.__esModule = true;
 exports.generateHttpFile = void 0;
 var graphql_1 = require("graphql");
+var buildVariables_1 = require("./buildVariables");
 var generateHttpFile = function (operation, config) {
+    var _a, _b, _c;
     var host = config.host;
     var httpFile = [];
     var headers = "POST ".concat(host, "\nContent-Type: application/json");
@@ -11,19 +13,10 @@ var generateHttpFile = function (operation, config) {
     console.log(JSON.stringify(operation, null, 2));
     httpFile.push(request);
     var schemaVariables = operation.variableDefinitions;
-    var configVariables = config.variables[operation.name.value];
-    if (configVariables || (schemaVariables === null || schemaVariables === void 0 ? void 0 : schemaVariables.length)) {
-        var mandatoryVariables = Object.fromEntries(schemaVariables
-            .filter(function (v) { return v.type.kind === "NonNullType"; })
-            .map(function (v) {
-            var _a;
-            return [
-                v.variable.name.value,
-                (_a = (configVariables || {})[v.variable.name.value]) !== null && _a !== void 0 ? _a : "$".concat(v.variable.name.value),
-            ];
-        }));
-        httpFile.push(JSON.stringify(mandatoryVariables));
-    }
+    var configVariables = ((_a = config.variables) !== null && _a !== void 0 ? _a : {})[(_c = (_b = operation.name) === null || _b === void 0 ? void 0 : _b.value) !== null && _c !== void 0 ? _c : ""];
+    var variables = (0, buildVariables_1.buildVariables)(configVariables, schemaVariables);
+    if (variables)
+        httpFile.push(JSON.stringify(variables, null, 2));
     return httpFile.join("\n\n");
 };
 exports.generateHttpFile = generateHttpFile;

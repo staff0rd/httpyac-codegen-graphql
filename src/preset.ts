@@ -52,20 +52,20 @@ export const preset: Types.OutputPreset<Config> = {
             },
           },
         ],
-        filename: `${options.baseOutputDir}/${operation.name.value}.http`,
+        filename: `${options.baseOutputDir}/${operation.name!.value}.http`,
       }));
 
     if (presetConfig.include && presetConfig.include !== "*") {
       if (Array.isArray(presetConfig.include)) {
         return buildArtifacts(
           definitions.filter((definition) =>
-            presetConfig.include.includes(definition.name.value)
+            presetConfig.include.includes(definition.name!.value)
           )
         );
       } else {
         return buildArtifacts(
           definitions.filter(
-            (definition) => definition.name.value === presetConfig.include
+            (definition) => definition.name!.value === presetConfig.include
           )
         );
       }
