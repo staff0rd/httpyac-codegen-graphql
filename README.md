@@ -15,5 +15,5 @@ npx tsc && npm run codegen
 With logging
 
 ```bash
-npx tsc && npm run codegen | less
+npx tsc && npm run codegen | more
 ```
