@@ -1,9 +1,8 @@
 overwrite: true
 schema: "https://api.spacex.land/graphql"
-documents: null
 generates:
   output:
-    preset: dist/my-preset.js
+    preset: dist/httpyac-codegen-graphql.js
     presetConfig:
       variables:
         - ship_query:
