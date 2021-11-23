@@ -1,6 +1,6 @@
-export interface OperationsDocumentConfig {
+export interface Config {
   /**
-   * @default Infinity
+   * @default 10
    * @description Allows you choose how many levels of depth selection sets will be generated
    */
   depthLimit?: number;
@@ -9,4 +9,10 @@ export interface OperationsDocumentConfig {
    * @description Allows you choose how many times the circular references can repeat
    */
   circularReferenceDepth?: number;
+
+  variables?: [
+    {
+      [request: string]: [{ [variable: string]: string }];
+    }
+  ];
 }
