@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    "dist": true
+    "dist": false
   },
   "search.exclude": {
     "dist": true
