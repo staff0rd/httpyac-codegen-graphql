@@ -2,7 +2,7 @@
   "name": "httpyac-codegen-graphql",
   "version": "0.0.4",
   "description": "GraphQL code generator preset for building httpyac files",
-  "main": "index.js",
+  "main": "dist/preset.js",
   "scripts": {
     "test": "jest",
     "codegen": "graphql-codegen --config codegen.yml",
@@ -10,7 +10,8 @@
     "release": "yarn build && yarn changeset publish"
   },
   "files": [
-    "dist"
+    "dist",
+    "empty.js"
   ],
   "author": "Stafford Williams",
   "license": "ISC",
