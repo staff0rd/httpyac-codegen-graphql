@@ -1,6 +1,6 @@
 {
   "name": "httpyac-codegen-graphql",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "GraphQL code generator preset for building httpyac files",
   "main": "index.js",
   "scripts": {
