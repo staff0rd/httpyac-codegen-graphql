@@ -24,9 +24,6 @@ generates:
           id: HAWK
         cores_query:
           id: B1034
-    # Needed to workaround a graphql-code-generator limitation
-    plugins:
-      - httpyac-codegen-graphql/empty
 ```
 
 Generate requests:

@@ -10,8 +10,7 @@
     "release": "yarn build && yarn changeset publish"
   },
   "files": [
-    "dist",
-    "empty.js"
+    "dist"
   ],
   "author": "Stafford Williams",
   "license": "ISC",
