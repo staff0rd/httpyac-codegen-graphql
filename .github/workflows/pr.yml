@@ -13,6 +13,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - run: npm ci
-      - run: npx tsc --noEmit
-      - run: npm test
+      - run: yarn
+      - run: yarn check-types
+      - run: yarn test

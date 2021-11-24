@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "check-types": "tsc --noEmit",
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "author": "",
