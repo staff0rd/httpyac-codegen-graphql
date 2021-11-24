@@ -10,5 +10,3 @@ generates:
           id: HAWK
         cores_query:
           id: B1034
-    plugins:
-      - dist/empty.js
