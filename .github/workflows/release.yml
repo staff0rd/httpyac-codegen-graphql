@@ -10,7 +10,7 @@ jobs:
     name: release
     runs-on: ubuntu-latest
     steps:
-      - name: actions/checkout@master
+      - uses: actions/checkout@master
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
