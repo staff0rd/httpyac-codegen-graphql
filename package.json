@@ -9,6 +9,9 @@
     "build": "tsc",
     "release": "yarn build && yarn changeset publish"
   },
+  "files": [
+    "dist"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
