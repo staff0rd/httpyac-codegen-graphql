@@ -1,5 +1,11 @@
 # httpyac-codegen-graphql
 
+## 1.0.1
+
+### Patch Changes
+
+- a409945: Removed empty plugin requirement
+
 ## 1.0.0
 
 ### Major Changes
