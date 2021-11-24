@@ -1,7 +1,7 @@
 {
   "name": "httpyac-codegen-graphql",
   "version": "0.0.2",
-  "description": "",
+  "description": "GraphQL code generator preset for building httpyac files",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -12,7 +12,7 @@
   "files": [
     "dist"
   ],
-  "author": "",
+  "author": "Stafford Williams",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -36,5 +36,13 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.18.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staff0rd/httpyac-codegen-graphql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/staff0rd/httpyac-codegen-graphql/issues"
+  },
+  "homepage": "https://github.com/staff0rd/httpyac-codegen-graphql#readme"
 }
