@@ -1,19 +1,18 @@
 # httpyac-codegen-graphql
 
-## install
+## developing
+
+This preset can be cloned locally and developed. During development however, `graphql-code-generator` needs to be patched locally until [this PR](https://github.com/dotansimha/graphql-code-generator/pull/7055) is merged.
+
+### build & run
 
 ```bash
 yarn
-```
-
-## build & run
-
-```bash
-npx tsc && npm run codegen
+yarn build && yarn codegen
 ```
 
 With logging
 
 ```bash
-npx tsc && npm run codegen | more
+yarn build && yarn codegen | more
 ```
