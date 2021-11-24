@@ -10,7 +10,6 @@ var generateHttpFile = function (operation, config) {
     var headers = "POST ".concat(host, "\nContent-Type: application/json");
     httpFile.push(headers);
     var request = (0, graphql_1.print)(operation);
-    console.log(JSON.stringify(operation, null, 2));
     httpFile.push(request);
     var schemaVariables = operation.variableDefinitions;
     var configVariables = ((_a = config.variables) !== null && _a !== void 0 ? _a : {})[(_c = (_b = operation.name) === null || _b === void 0 ? void 0 : _b.value) !== null && _c !== void 0 ? _c : ""];
