@@ -9,8 +9,14 @@ export const generateHttpFile = (
   const { host } = config;
   const httpFile: string[] = [];
 
-  const headers = `POST ${host}\nContent-Type: application/json`;
-  httpFile.push(headers);
+  const contentType = `POST ${host}\nContent-Type: application/json`;
+  httpFile.push(contentType);
+
+  if (config.headers) {
+    for (const [header, value] of Object.entries(config.headers)) {
+      httpFile.push(`${header}: ${value}`);
+    }
+  }
 
   const request = print(operation);
   httpFile.push(request);
