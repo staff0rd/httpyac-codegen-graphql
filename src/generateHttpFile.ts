@@ -9,14 +9,8 @@ export const generateHttpFile = (
   const { host } = config;
   const httpFile: string[] = [];
 
-  const contentType = `POST ${host}\nContent-Type: application/json`;
-  httpFile.push(contentType);
-
-  if (config.headers) {
-    for (const [header, value] of Object.entries(config.headers)) {
-      httpFile.push(`${header}: ${value}`);
-    }
-  }
+  const headers = buildHeaders(host, config);
+  httpFile.push(headers.join("\n"));
 
   const request = print(operation);
   httpFile.push(request);
@@ -27,4 +21,16 @@ export const generateHttpFile = (
   if (variables) httpFile.push(JSON.stringify(variables, null, 2));
 
   return httpFile.join("\n\n");
+};
+
+const buildHeaders = (host: string, config: Config) => {
+  const headers: string[] = [];
+  headers.push(`POST ${host}\nContent-Type: application/json`);
+
+  if (config.headers) {
+    for (const [header, value] of Object.entries(config.headers)) {
+      headers.push(`${header}: ${value}`);
+    }
+  }
+  return headers;
 };
