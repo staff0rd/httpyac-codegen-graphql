@@ -9,6 +9,18 @@ export const generateHttpFile = (
   const { host } = config;
   const httpFile: string[] = [];
 
+  if (config.scripts) {
+    const scripts: string[] = [];
+    for (const { script, event } of config.scripts) {
+      if (event) {
+        scripts.push(`{{@${event}\n${script}\n}}`);
+      } else {
+        scripts.push(`{{\n${script}\n}}`);
+      }
+    }
+    scripts.forEach((s) => httpFile.push(s));
+  }
+
   if (config.httpFileVariables) {
     const httpFileVariables: string[] = [];
     for (const [variable, value] of Object.entries(config.httpFileVariables)) {

@@ -40,4 +40,15 @@ export interface Config {
    * @description .http file variables to include in each request
    */
   httpFileVariables?: { [variable: string]: string };
+
+  /**
+   * @default undefined
+   * @description Scripts to include in each request
+   */
+  scripts?: Script[];
+}
+
+interface Script {
+  event?: string;
+  script: string;
 }
