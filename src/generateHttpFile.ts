@@ -9,6 +9,14 @@ export const generateHttpFile = (
   const { host } = config;
   const httpFile: string[] = [];
 
+  if (config.httpFileVariables) {
+    const httpFileVariables: string[] = [];
+    for (const [variable, value] of Object.entries(config.httpFileVariables)) {
+      httpFileVariables.push(`@${variable}=${value}`);
+    }
+    httpFile.push(httpFileVariables.join("\n"));
+  }
+
   const headers = buildHeaders(host, config);
   httpFile.push(headers.join("\n"));
 

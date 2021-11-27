@@ -34,4 +34,10 @@ export interface Config {
    * @description Headers to include in each request, in addition to Content-Type: application/json
    */
   headers?: { [header: string]: string };
+
+  /**
+   * @default undefined
+   * @description .http file variables to include in each request
+   */
+  httpFileVariables?: { [variable: string]: string };
 }
