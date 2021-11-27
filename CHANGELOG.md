@@ -1,5 +1,13 @@
 # httpyac-codegen-graphql
 
+## 1.1.0
+
+### Minor Changes
+
+- 9caa634: Allow configuration of .http file variables to include in each generated file
+- 3e3745f: Allow configuration of additional headers in each generated file
+- f74313a: Allow configuration of scripts to include in each generated file
+
 ## 1.0.1
 
 ### Patch Changes
