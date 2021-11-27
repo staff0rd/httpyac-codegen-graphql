@@ -24,14 +24,15 @@ export const preset: Types.OutputPreset<Config> = {
     const definitions: OperationDefinitionNode[] = [];
     for (const [kind, rootType] of rootTypeMap) {
       for (const field in rootType.getFields()) {
-        const operationDefinitionNode: OperationDefinitionNode =
-          buildOperationNodeForField({
+        const operationDefinitionNode: OperationDefinitionNode = buildOperationNodeForField(
+          {
             schema,
             kind,
             field,
             depthLimit: depthLimit,
             circularReferenceDepth: circularReferenceDepth,
-          });
+          }
+        );
         definitions.push(operationDefinitionNode);
       }
     }
@@ -59,7 +60,7 @@ export const preset: Types.OutputPreset<Config> = {
       if (Array.isArray(presetConfig.include)) {
         return buildArtifacts(
           definitions.filter((definition) =>
-            presetConfig.include.includes(definition.name!.value)
+            presetConfig.include!.includes(definition.name!.value)
           )
         );
       } else {
