@@ -9,8 +9,28 @@ export const generateHttpFile = (
   const { host } = config;
   const httpFile: string[] = [];
 
-  const headers = `POST ${host}\nContent-Type: application/json`;
-  httpFile.push(headers);
+  if (config.scripts) {
+    const scripts: string[] = [];
+    for (const { script, event } of config.scripts) {
+      if (event) {
+        scripts.push(`{{@${event}\n${script}\n}}`);
+      } else {
+        scripts.push(`{{\n${script}\n}}`);
+      }
+    }
+    scripts.forEach((s) => httpFile.push(s));
+  }
+
+  if (config.httpFileVariables) {
+    const httpFileVariables: string[] = [];
+    for (const [variable, value] of Object.entries(config.httpFileVariables)) {
+      httpFileVariables.push(`@${variable}=${value}`);
+    }
+    httpFile.push(httpFileVariables.join("\n"));
+  }
+
+  const headers = buildHeaders(host, config);
+  httpFile.push(headers.join("\n"));
 
   const request = print(operation);
   httpFile.push(request);
@@ -21,4 +41,16 @@ export const generateHttpFile = (
   if (variables) httpFile.push(JSON.stringify(variables, null, 2));
 
   return httpFile.join("\n\n");
+};
+
+const buildHeaders = (host: string, config: Config) => {
+  const headers: string[] = [];
+  headers.push(`POST ${host}\nContent-Type: application/json`);
+
+  if (config.headers) {
+    for (const [header, value] of Object.entries(config.headers)) {
+      headers.push(`${header}: ${value}`);
+    }
+  }
+  return headers;
 };
