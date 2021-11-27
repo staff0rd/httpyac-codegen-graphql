@@ -26,5 +26,5 @@ export interface Config {
    * @default *
    * @description Which requests will be generated
    */
-  include: string | string[];
+  include?: string | string[];
 }
