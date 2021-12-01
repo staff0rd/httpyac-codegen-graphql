@@ -50,7 +50,7 @@ generates:
   output:
     schema:
       # to use introspection - othwerise just specify a graph.schema file
-      https://<your-appsync-id>.appsync-api.ap-southeast-2.amazonaws.com/graphql
+      https://<your-appsync-id>.appsync-api.ap-southeast-2.amazonaws.com/graphql:
         headers:
           Authorization: <your jwt>
     preset: httpyac-codegen-graphql
