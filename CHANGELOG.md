@@ -1,5 +1,11 @@
 # httpyac-codegen-graphql
 
+## 2.0.0
+
+### Major Changes
+
+- f4ba763: Move graphql into peerDependencies
+
 ## 1.1.0
 
 ### Minor Changes
